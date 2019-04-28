@@ -1,0 +1,16 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "Sending PDF in mails using node",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Ikshit Mathur",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "nodemailer": "^5.1.1"
+  }
+}

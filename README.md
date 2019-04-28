@@ -7,4 +7,4 @@ Here, we are using html-pdf npm package
 Run npm install
 
 #To run the project run
-Run node app
+node app

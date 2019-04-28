@@ -17,7 +17,7 @@ router.post('/send',function(req,res){
                 var mailOptions = {
                     to: req.body.email,
                     subject: 'Test',
-                    from: "ikshitnodemailer@gmail.com",
+                    from: "from@gmail.com",
                     headers: {
                         "X-Laziness-level": 1000,
                         "charset" : 'UTF-8'
@@ -31,8 +31,8 @@ router.post('/send',function(req,res){
                 var transporter = nodemailer.createTransport({
                     service: 'Gmail',
                     auth: {
-                        user: 'ikshitnodemailer@gmail.com', 
-                        pass: 'ikshit1007' 
+                        user: 'from@gmail.com', 
+                        pass: 'password' 
                     }
                 });
                 transporter.sendMail(mailOptions, function(error, response){

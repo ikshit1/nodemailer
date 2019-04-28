@@ -1,1 +1,30 @@
-<h1>hellobasgdasgdsa</h1>
+<h1>Send mail</h1>
+
+<h3>Enter Email Id</h3>
+<div class="row">
+    <input type="text" id="email">
+</div>
+<div class="row">
+    <button id="send" onclick="test()">Send</button>
+</div>
+
+<script>
+        function test() {
+            var xhr = new XMLHttpRequest();
+            var url = "http://localhost:3000/mail/send";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    if (json.state === 'success') {
+                        alert(json.message);
+                    } else {
+                        alert('error');
+                    }
+                }
+            };
+            var data = JSON.stringify({"email": document.getElementById('email').value});
+            xhr.send(data);
+        }
+</script>
